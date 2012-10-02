@@ -259,7 +259,7 @@ think list(
     strfunc(u,%va/line_init_[first(%qe,|)]||%qe,|)));
 &_inits %l=if(words(%qi,`),iter(%qs,index(%qi,`,itext(0),1),%b,`));
 think setq(p,setunion(iter(%qi,index(itext(0),|,2,1),`,%b),));
-think setq(o,setdiff(lcon(%l,CONNECT),%qp));
+think setq(o,filter(fil_observable,setdiff(lcon(%l,CONNECT),%qp)));
 @pemit %#=
   strcat(
     if(words(%qo),
